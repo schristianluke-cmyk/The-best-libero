@@ -1,0 +1,410 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For my best friend Aquisha ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
+
+:root {
+  --pink: #f3cbd8;
+  --dark-pink: #c87591;
+  --cream: #fff9ef;
+  --text: #674956;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: #fff3f4;
+  font-family: 'Quicksand', sans-serif;
+  background-image: radial-gradient(#e9c4cf 0.8px, transparent 0.8px);
+  background-size: 17px 17px;
+}
+
+button, a { -webkit-tap-highlight-color: transparent; }
+
+button { font: inherit; }
+
+.hero {
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 35px 20px;
+  background: linear-gradient(140deg, #f9dce5, #fff0d9, #f4d8e7);
+  position: relative;
+  overflow: hidden;
+}
+
+.tape {
+  display: inline-block;
+  background: #eeb8c8bb;
+  width: 85px;
+  height: 24px;
+  transform: rotate(-8deg);
+  margin-bottom: 15px;
+}
+
+.hero h1 {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(48px, 11vw, 90px);
+  line-height: 1;
+  margin: 8px 0;
+}
+
+.hero p {
+  font-size: 15px;
+  max-width: 360px;
+  line-height: 1.8;
+}
+
+.stickers {
+  font-size: 28px;
+  margin: 15px;
+}
+
+.btn {
+  display: inline-block;
+  border: 0;
+  border-radius: 30px;
+  padding: 13px 23px;
+  background: var(--dark-pink);
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform .2s;
+}
+
+.btn:hover { transform: translateY(-3px); }
+
+main {
+  width: min(900px, 92%);
+  margin: auto;
+}
+
+section { padding: 55px 0 20px; }
+
+.section-title {
+  font-family: 'Caveat', cursive;
+  font-size: 43px;
+  text-align: center;
+  margin: 0 0 25px;
+}
+
+.paper {
+  background: var(--cream);
+  padding: 25px;
+  border: 1px solid #ead9bd;
+  box-shadow: 4px 6px 0 #ebcbd5;
+  line-height: 1.9;
+  transform: rotate(-1deg);
+}
+
+.paper p { margin: 0; }
+
+.album {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 23px 17px;
+  align-items: start;
+}
+
+.polaroid {
+  background: white;
+  padding: 9px 9px 17px;
+  box-shadow: 2px 5px 12px #d8b9c5;
+}
+
+.polaroid:nth-child(odd) { transform: rotate(-3deg); }
+.polaroid:nth-child(even) { transform: rotate(3deg); }
+
+.polaroid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  background: #f3dce4;
+}
+
+.caption {
+  text-align: center;
+  font-family: 'Caveat', cursive;
+  font-size: 23px;
+  margin: 12px 0 0;
+}
+
+.small-caption {
+  text-align: center;
+  font-size: 11px;
+  margin-top: 5px;
+}
+
+.timeline {
+  margin-left: 12px;
+  border-left: 3px dashed #d99caf;
+  padding-left: 23px;
+}
+
+.event {
+  position: relative;
+  padding: 0 0 28px;
+}
+
+.event::before {
+  content: '♡';
+  position: absolute;
+  left: -36px;
+  top: 0;
+  color: var(--dark-pink);
+  background: #fff3f4;
+}
+
+.event h3 {
+  font-family: 'Caveat', cursive;
+  font-size: 27px;
+  margin: 0 0 5px;
+}
+
+.event p { line-height: 1.7; margin: 0; }
+
+.letter {
+  width: 100%;
+  display: block;
+  text-align: left;
+  border: 1px solid #e6c1ce;
+  background: #f9e0e8;
+  color: var(--text);
+  border-radius: 12px;
+  padding: 17px;
+  margin: 12px 0;
+  cursor: pointer;
+}
+
+.letter-content {
+  display: none;
+  background: #fffbed;
+  padding: 18px;
+  border-radius: 10px;
+  line-height: 1.8;
+  margin-bottom: 14px;
+  white-space: pre-wrap;
+}
+
+.letter-content.open { display: block; }
+
+.music-card {
+  text-align: center;
+  padding: 24px 15px;
+  background: #f9e0e8;
+  border-radius: 18px;
+}
+
+.music-card audio { width: 100%; margin-top: 15px; }
+
+footer {
+  margin-top: 55px;
+  padding: 35px 15px;
+  background: #f5d6e1;
+  text-align: center;
+  font-family: 'Caveat', cursive;
+  font-size: 25px;
+}
+
+@media (min-width: 650px) {
+  .album { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  section { padding-top: 70px; }
+}
+
+@media (max-width: 360px) {
+  .album { grid-template-columns: 1fr; }
+  .paper { padding: 18px; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="stickers">🎀 📸 🧸 💌</div>
+  <div class="tape"></div>
+
+  <h1>Our Little<br>Memories</h1>
+
+  <p>
+    Un pequeño álbum de nuestros momentos,
+    nuestras tonterías y nuestra amistad. ♡
+  </p>
+
+  <a class="btn" href="#carta">open it bitch 💌</a>
+
+  <p>hecho especialmente para tiiiiiiii ♡</p>
+</header>
+
+<main>
+
+<section id="carta">
+  <h2 class="section-title">Una pequeña carta ♡</h2>
+
+  <div class="paper">
+    <p>
+      For the best girl i ever:
+      <br><br>
+      Estos días no he tenido mucho tiempo, so i decided to do 
+      something special with all our memories and our prime moments.
+      <br><br>
+      Muchas gracias Aquisha por haberme acompañado todos ese tiempo
+      desde que te conocí hasta este día tan importante para ti.
+      <br><br>
+      Todo lo que vas a ver es muy poco comparado con todo lo que hemos vivido. :p
+    </p>
+  </div>
+</section>
+
+<section id="album">
+  <h2 class="section-title">OUR ALLBUUUUUM</h2>
+
+  <div class="album">
+
+    <article class="polaroid">
+      <img src="foto1.jpeg" alt="Cuando teníamos que ir a anfi pero estabamos en la playa">
+      <p class="caption">Un día especial ♡</p>
+      <p class="small-caption">We were late btw</p>
+    </article>
+
+    <article class="polaroid">
+      <img src="foto2.jpeg" alt="When u saw a dead pigeon">
+      <p class="caption">Nuestras locuras</p>
+      <p class="small-caption">i was laughing all the time</p>
+    </article>
+
+    <article class="polaroid">
+      <img src="foto3.jpeg" alt="Ur prime">
+      <p class="caption">Nosotras 🎀</p>
+      <p class="small-caption">I love it</p>
+    </article>
+
+    <article class="polaroid">
+      <img src="foto4.jpeg" alt="When we uset to wath arons train">
+      <p class="caption">Core memory</p>
+      <p class="small-caption">that jerk</p>
+    </article>
+
+    <article class="polaroid">
+      <img src="foto5.jpeg" alt="When salimos en pijamas">
+      <p class="caption">Mi foto favorita</p>
+      <p class="small-caption">i was freezing mai balls</p>
+    </article>
+
+    <article class="polaroid">
+      <img src="foto6.jpeg" alt="Siempre coges my damn phone">
+      <p class="caption">Continuará...</p>
+      <p class="small-caption">i have a lot of catafos of ur face hehe</p>
+    </article>
+
+  </div>
+</section>
+
+<section id="historia">
+  <h2 class="section-title">our story</h2>
+
+  <div class="timeline">
+
+    <article class="event">
+      <h3> When we met</h3>
+      <p>
+        Here begins our story. Who would have imagined
+        all the memories we would create.
+      </p>
+    </article>
+
+    <article class="event">
+      <h3> The first VOLLEY PRIME</h3>
+      <p>
+        Semana santa, frio, prime volley, everything was perfect
+      </p>
+    </article>
+
+    <article class="event">
+      <h3>When u kised aron for the first time</h3>
+      <p>
+        GIRL, I DONT EVEN KNOW HOW U WERE ABLE TO KISS THAT MADAFAKIN BITCH I SWEAR.
+      </p>
+    </article>
+
+    <article class="event">
+      <h3>idk girl my brain isnt braining</h3>
+      <p>
+        i like tomatoes. But girl honestly, I dont even know what to write here. I just want to say that i love you and that im really happy to have met you. You are a really special person for me and i hope we can keep making memories together.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<section id="secretos">
+  <h2 class="section-title">open when u want </h2>
+
+  <button class="letter" onclick="toggleLetter('c1', this)">
+    💌 when u need to smile like my granpa
+  </button>
+  <div class="letter-content" id="c1">
+    Cuando me pegaste en toda la cara jugando volley y me casi me rompes las gafas y me matas. GIRL DONDE HAS SACADO ESA FUERZA
+  </div>
+
+  <button class="letter" onclick="toggleLetter('c2', this)">
+    💌 un secretito bien putito
+  </button>
+  <div class="letter-content" id="c2">
+    me encantaria estar en tu cumple rn but i know i cant so when u are reading this estoy abrazandote telepaticamente, btw i told carlos que si lloras te grabe heheheheheheheh
+  </div>
+
+  <button class="letter" onclick="toggleLetter('c3', this)">
+    💌 The last thing 
+  </button>
+  <div class="letter-content" id="c3">
+    i miss when we used to hang out all the gang
+  </div>
+</section>
+
+<section id="musica">
+  <h2 class="section-title">our sooong </h2>
+
+  <div class="music-card">
+    <div style="font-size:45px">🎶 💗 🎶</div>
+    <p>Una canción es iconic en el volley</p>
+
+    <audio controls>
+      <source src="musica.mp3" type="audio/mpeg">
+      Tu navegador no puede reproducir este audio.
+    </audio>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  Hecho con cariño, para la mejor liberoo
+  <div>One joke y muchas risass 🎀</div>
+</footer>
+
+<script>
+function toggleLetter(id, button) {
+  const letter = document.getElementById(id);
+  const isOpen = letter.classList.toggle('open');
+
+  button.setAttribute('aria-expanded', String(isOpen));
+}
+</script>
+
+</body>
+</html>
